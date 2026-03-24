@@ -13,7 +13,7 @@ export const projects: Project[] = [
   {
     id: "proximity-link",
     title: "Proximity Link",
-    description: "แอปพลิเคชันสื่อสารระหว่างคน",
+    description: "Proximity Link: A social media platform focused on community building (Groups). It allows users to efficiently share content, photos, and videos, while managing group events through a shared calendar.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     githubUrl: "https://github.com/Kanyadasupan/mini-project",
     demoUrl: "https://proximity-link.vercel.app/",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
   {
     id: "food-tracker-app",
     title: "Food Tracker App",
-    description: "แอปพลิเคชันสำหรับติดตามอาหาร",
+    description: "Food Tracker: A web application for logging and tracking daily meals. Perfect for those who want to keep a visual food diary with photos.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     githubUrl: "https://github.com/Kanyadasupan/next-food-tracker-app",
     demoUrl: "https://next-food-tracker-app-omega.vercel.app/",
@@ -54,7 +54,7 @@ export const projects: Project[] = [
   {
     id: "manage-task-app",
     title: "Manage Task App",
-    description: "แอปพลิเคชันสำหรับจัดการงาน",
+    description: "Manage Task App: A web application for managing your To-Do List. It helps you record tasks, track progress, and easily upload supporting images to stay organized.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     githubUrl: "https://github.com/Kanyadasupan/next-manage-task-app",
     demoUrl: "https://next-manage-task-app-theta.vercel.app/",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
   {
     id: "run-tracker-app",
     title: "Run Tracker App",
-    description: "แอปพลิเคชันสำหรับติดตามการวิ่ง",
+    description: "Running Tracker App: An application designed to record locations and track running distances.",
     tags: ["React Native", "Supabase", "Expo go"],
     githubUrl: "https://github.com/Kanyadasupan/rn-run-tracker-app",
     category: "React Native",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
   {
     id: "provice-kamphangpet-app",
     title: "provice Kamphangpet app",
-    description: "แอปพลิเคชันสื่อสารข้อมูลจังหวัดกําแพงเพชร",
+    description: "Kamphaeng Phet Travel Guide: An application providing essential travel information and highlighting the cultural traditions of Kamphaeng Phet province.",
     tags: ["React Native", "Supabase", "Expo go"],
     githubUrl: "https://github.com/Kanyadasupan/rn-6652410028-thai-provice-app",
     category: "React Native",
@@ -110,7 +110,7 @@ export const projects: Project[] = [
   {
     id: "bkk-coffee-app",
     title: "Coffee Shops app",
-    description: "แอปพลิเคชันสื่อสารข้อมูลสถานที่ร้านกาแฟในกรุงเทพมหานคร",
+    description: "Cafe Finder App: Specifically designed for cafe lovers. This app lets you browse menus, view shop details, and explore the ambiance of your favorite coffee spots with ease.",
     tags: ["React Native", "Supabase", "Expo go"],
     githubUrl: "https://github.com/Kanyadasupan/rn-dti-bkk-coffee-app",
     category: "React Native",
@@ -124,7 +124,7 @@ export const projects: Project[] = [
   {
     id: "taxi-app",
     title: "Taxi App",
-    description: "แอปพลิเคชันคำนวณค่าเดินทางของรถแท็กซี่จากระยะทาง",
+    description: "Taxi Meter App: A fare estimation tool that helps users accurately predict travel costs based on standard rates, accounting for both distance and traffic delays.",
     tags: ["React Native", "Expo go"],
     githubUrl: "https://github.com/Kanyadasupan/rn-dti-taxi-app",
     category: "React Native",
@@ -138,7 +138,7 @@ export const projects: Project[] = [
   {
     id: "carinstallment-app",
     title: "Carinstallment App",
-    description: "แอปพลิเคชันคำนวณค่าเดินทางของรถแท็กซี่จากระยะทาง",
+    description: "Car Installment App: A tool to simplify your car-buying plans. It quickly and accurately calculates loan amounts, down payments, interest rates, and monthly installments.",
     tags: ["React Native", "Expo go"],
     githubUrl: "https://github.com/Kanyadasupan/rn-dti-carinstallment-app",
     category: "React Native",
@@ -151,7 +151,7 @@ export const projects: Project[] = [
   {
     id: "bmr-calculator-app",
     title: "BMR Calculator App",
-    description: "แอปพลิเคชันคำนวณค่า BMR",
+    description: "BMR Calculator: A health assistant that accurately estimates your Basal Metabolic Rate (daily calorie needs). It also allows you to factor in activity levels for effective health planning.",
     tags: ["React Native", "Expo go"],
     githubUrl: "https://github.com/Kanyadasupan/rn-dti-bmr-calculator-app",
     category: "React Native",
@@ -167,7 +167,7 @@ export const projects: Project[] = [
   {
     id: "bmi-calculator-app",
     title: "BMI Calculator App",
-    description: "แอปพลิเคชันคำนวณค่า BMI",
+    description: "BMI Calculator: A quick and accurate tool to check your weight category and assess basic health status by simply entering your weight and height.",
     tags: ["React Native", "Expo go"],
     githubUrl: "https://github.com/Kanyadasupan/rn-dti-bmi-app",
     category: "React Native",
