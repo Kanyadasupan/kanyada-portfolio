@@ -20,7 +20,7 @@
 * **Language:** TypeScript
 * **Styling:** Tailwind CSS
 * **Animation:** Framer Motion
-* **Deployment:** Vercel (แนะนำ)
+* **Deployment:** Vercel 
 
 ---
 
