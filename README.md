@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✨ Personal Portfolio 2026 | Kanyada Supan
+### Modern, Interactive, and Aesthetic Developer Portfolio 🚀
 
-## Getting Started
+ยินดีต้อนรับสู่โปรเจกต์ **Personal Portfolio** ของฉัน! เว็บไซต์นี้ถูกสร้างขึ้นเพื่อรวบรวมและนำเสนอผลงาน (Projects), ทักษะความสามารถ (Skills), และประวัติส่วนตัวในฐานะ **Junior Developer** โดยเน้นการออกแบบที่เรียบหรู (Minimal & Luxury) ด้วยโทนสี **Navy & Gold** พร้อมลูกเล่นแอนิเมชันที่ลื่นไหลเพื่อประสบการณ์การใช้งานที่ดีที่สุด
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ คุณสมบัติหลัก (Key Features)
+* **🎨 Aesthetic UI/UX:** ดีไซน์เรียบหรู ทันสมัย คุมโทนสี Navy (`#1A2235`) และ Gold (`#B8965A`)
+* **💫 Smooth Animations:** ใช้ `framer-motion` ในการสร้างแอนิเมชันการเลื่อนหน้าจอ, Hover Effects, และ Parallax
+* **📱 Fully Responsive:** รองรับการแสดงผลทุกขนาดหน้าจอ ทั้ง Desktop, Tablet และ Mobile
+* **📂 Dynamic Project Routing:** หน้ารายละเอียดโปรเจกต์ (Project Detail) ที่ดึงข้อมูลและรูปภาพแบบไดนามิก รองรับ Image Slider
+* **🗂 Horizontal Scroll Showcase:** ส่วนจัดแสดงผลงานที่สามารถเลื่อนดูแนวนอนได้อย่างสมูท พร้อมแบ่งหมวดหมู่ (Next.js, React Native)
+* **⚡ Optimized Performance:** โหลดภาพได้รวดเร็วและมีประสิทธิภาพด้วย `next/image`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 เทคโนโลยีที่ใช้ (Tech Stack)
+* **Framework:** [Next.js](https://nextjs.org/) (React)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Animation:** Framer Motion
+* **Deployment:** Vercel (แนะนำ)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🚀 การติดตั้งและรันโปรเจกต์ (Installation & Setup)
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Clone โปรเจกต์:**
+    ```bash
+    git clone [https://github.com/Kanyadasupan/your-portfolio-repo-name.git](https://github.com/Kanyadasupan/your-portfolio-repo-name.git)
+    cd your-portfolio-repo-name
+    ```
+    *(อย่าลืมเปลี่ยน URL เป็นชื่อ Repository จริงของคุณ)*
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2.  **ติดตั้ง Dependencies:**
+    ```bash
+    npm install
+    # หรือใช้ yarn install / pnpm install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3.  **รันเซิร์ฟเวอร์จำลอง (Development Server):**
+    ```bash
+    npm run dev
+    ```
 
-## Deploy on Vercel
+4.  **เปิดดูผลลัพธ์:** เปิดเบราว์เซอร์และเข้าไปที่ [http://localhost:3000](http://localhost:3000)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📂 โครงสร้างผลงานที่โดดเด่น (Featured Projects)
+ภายในพอร์ตโฟลิโอนี้ได้รวบรวมโปรเจกต์ที่พัฒนาด้วย **Next.js** และ **React Native (Expo)** เช่น:
+* 🌐 **Proximity Link:** แอปพลิเคชันสื่อสารระหว่างคน (Next.js + Supabase)
+* 🥗 **Food Tracker App:** เว็บแอปสำหรับติดตามโภชนาการ
+* 🏃‍♂️ **Run Tracker App:** แอปพลิเคชันมือถือติดตามการวิ่ง (React Native)
+* ☕ **Coffee Shops App:** แอปรวมร้านกาแฟใน กทม.
+* 📊 **BMI & BMR Calculator:** แอปคำนวณค่าสุขภาพพื้นฐาน
+* และอื่นๆ อีกมากมาย...
+
+---
+
+## 👤 ผู้พัฒนา (Developer)
+**Developed by [Kanyada](https://github.com/KanyadaSupan)**
+*Student at Southeast Asia University | Digital Technology and Innovation*
+
+---
