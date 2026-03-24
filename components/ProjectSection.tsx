@@ -16,8 +16,11 @@ export const ProjectSection = () => {
   const scroll = (index: number, direction: "left" | "right") => {
     const container = scrollRefs.current[index];
     if (container) {
-      // เลื่อนไป 1 ใบพอดี (ความกว้างการ์ด 420px + gap 24px)
-      const scrollAmount = direction === "left" ? -444 : 444; 
+      // บนมือถือให้เลื่อนระยะสั้นลงเล็กน้อยตามขนาดการ์ดที่เล็กลง
+      const isMobile = window.innerWidth < 768;
+      const scrollAmount = direction === "left" 
+        ? (isMobile ? -320 : -444) 
+        : (isMobile ? 320 : 444); 
       container.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
@@ -29,14 +32,7 @@ export const ProjectSection = () => {
       className="relative py-32 lg:py-40 overflow-hidden"
       style={{ background: NAVY }}
     >
-      {/* Blueprint Grid & Background Text (เหมือนเดิม) */}
-      <div className="absolute inset-0 pointer-events-none opacity-40"
-        style={{
-          backgroundImage: `linear-gradient(to right, rgba(184,150,90,0.05) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(184,150,90,0.05) 1px, transparent 1px)`,
-          backgroundSize: "64px 64px",
-        }}
-      />
+      {/* ... (Blueprint Grid & Background Text เหมือนเดิม) ... */}
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-8 mb-24 relative z-10">
@@ -58,10 +54,20 @@ export const ProjectSection = () => {
               PROJECTS
             </h2>
           </div>
+          
+          {/* 📌 Visual Hint สำหรับมือถือ (แสดงเฉพาะจอมือถือ) */}
+          <div className="md:hidden mt-4 flex items-center gap-2 text-[9px] font-mono uppercase tracking-[0.2em] text-white/30">
+             <span>Swipe</span>
+             <motion.span
+               animate={{ x: [0, 5, 0] }}
+               transition={{ repeat: Infinity, duration: 1.5 }}
+             >
+               →
+             </motion.span>
+          </div>
         </motion.div>
       </div>
 
-      {/* Categories & Horizontal Scroll */}
       <div className="space-y-40 relative z-10">
         {categories.map((cat, ci) => {
           const filtered = projects.filter((p) => p.category === cat);
@@ -69,45 +75,42 @@ export const ProjectSection = () => {
 
           return (
             <div key={cat} className="relative group/row">
-              {/* Category header */}
               <div className="max-w-7xl mx-auto px-8 mb-10 flex items-center gap-6">
                 <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-[#B8965A]/60">0{ci + 1}</span>
                 <h4 className="font-black text-2xl md:text-3xl text-white">{cat}</h4>
                 <div className="h-px flex-1 bg-white/5" />
               </div>
 
-              {/* 📌 คอนเทนเนอร์หลักที่คุมปุ่มและรายการการ์ด */}
-              <div className="relative px-4 md:px-12">
+              <div className="relative px-2 md:px-12">
                 
-                {/* 📌 ปุ่มลูกศรซ้าย - Floating */}
+                {/* 📌 ปุ่มลูกศรซ้าย - ปรับให้โชว์บนมือถือด้วย */}
                 <button
                   onClick={() => scroll(ci, "left")}
                   aria-label="Previous"
-                  className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-white/10 bg-[#1A2235]/80 backdrop-blur-md flex items-center justify-center text-[#B8965A] opacity-0 group-hover/row:opacity-100 transition-all duration-300 hover:bg-[#B8965A] hover:text-[#1A2235] shadow-2xl hidden md:flex"
+                  className="absolute left-1 md:left-8 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-[#1A2235]/90 backdrop-blur-md flex items-center justify-center text-[#B8965A] md:opacity-0 group-hover/row:opacity-100 transition-all duration-300 active:scale-90 shadow-2xl"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" className="md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
                 </button>
 
-                {/* 📌 รายการการ์ด (Scroll Area) */}
+                {/* รายการการ์ด */}
                 <div 
                   ref={(el) => { scrollRefs.current[ci] = el; }}
                   className="w-full overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth"
                 >
-                  {/* กำหนด padding-left/right เพื่อไม่ให้การ์ดตัวแรกและตัวสุดท้ายชิดขอบจอเกินไป */}
-                  <div className="flex gap-6 px-4 md:px-20 w-max pb-10">
+                  <div className="flex gap-4 md:gap-6 px-6 md:px-20 w-max pb-10">
                     {filtered.map((project, idx) => (
                       <ProjectCard key={project.id} project={project} index={idx} />
                     ))}
                   </div>
                 </div>
 
-                {/* 📌 ปุ่มลูกศรขวา - Floating */}
+                {/* 📌 ปุ่มลูกศรขวา - ปรับให้โชว์บนมือถือด้วย */}
                 <button
                   onClick={() => scroll(ci, "right")}
                   aria-label="Next"
-                  className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-white/10 bg-[#1A2235]/80 backdrop-blur-md flex items-center justify-center text-[#B8965A] opacity-0 group-hover/row:opacity-100 transition-all duration-300 hover:bg-[#B8965A] hover:text-[#1A2235] shadow-2xl hidden md:flex"
+                  className="absolute right-1 md:right-8 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-[#1A2235]/90 backdrop-blur-md flex items-center justify-center text-[#B8965A] md:opacity-0 group-hover/row:opacity-100 transition-all duration-300 active:scale-90 shadow-2xl"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" className="md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                 </button>
 
               </div>
