@@ -7,9 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRef, use, useState } from "react";
 
-const GOLD = "#B8965A";
-const NAVY = "#1A2235";
-
 export default function ProjectDetail({
   params,
 }: {
@@ -48,10 +45,7 @@ export default function ProjectDetail({
   };
 
   return (
-    <main
-      className="min-h-screen text-white selection:bg-[#B8965A] selection:text-[#1A2235] pb-32"
-      style={{ background: NAVY }}
-    >
+    <main className="min-h-screen text-white selection:bg-[#B8965A] selection:text-[#1A2235] pb-32 bg-[#1A2235]">
       <Navbar />
 
       <section className="pt-40 max-w-6xl mx-auto px-6 md:px-12">
@@ -65,11 +59,8 @@ export default function ProjectDetail({
 
         <div className="mb-16 md:mb-24">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-[2px]" style={{ background: GOLD }} />
-            <p
-              className="font-mono text-[10px] tracking-[0.5em] uppercase font-bold"
-              style={{ color: GOLD }}
-            >
+            <div className="w-12 h-[2px] bg-[#B8965A]" />
+            <p className="font-mono text-[10px] tracking-[0.5em] uppercase font-bold text-[#B8965A]">
               {project.category}
             </p>
           </div>
@@ -90,16 +81,9 @@ export default function ProjectDetail({
           </div>
         </div>
 
-        
         <div className="relative mb-16 md:mb-24 group/slider">
-          <div
-            className="relative w-full bg-[#0F1520] rounded-2xl md:rounded-[2rem] border overflow-hidden transition-[height] duration-500 ease-in-out"
-            style={{ borderColor: "rgba(255,255,255,0.05)" }}
-          >
-            <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] h-[60%] rounded-full blur-[100px] opacity-20 pointer-events-none"
-              style={{ background: GOLD }}
-            />
+          <div className="relative w-full bg-[#0F1520] rounded-2xl md:rounded-4xl border overflow-hidden transition-[height] duration-500 ease-in-out border-white/5">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] h-[60%] rounded-full blur-[100px] opacity-20 pointer-events-none bg-[#B8965A]" />
 
             {project.images && project.images.length > 0 ? (
               <>
@@ -133,14 +117,13 @@ export default function ProjectDetail({
                   {project.images.map((imgSrc, index) => (
                     <div
                       key={index}
-                      className="w-full flex-shrink-0 snap-center relative p-4 md:p-8"
+                      className="w-full shrink-0 snap-center relative p-4 md:p-8"
                     >
-                      
                       <div className="relative w-full">
                         <Image
                           src={imgSrc}
                           alt={`${project.title} screenshot ${index + 1}`}
-                          width={1920} 
+                          width={1920}
                           height={1080}
                           style={{
                             width: "100%",
@@ -149,7 +132,7 @@ export default function ProjectDetail({
                           }}
                           className="object-contain rounded-lg mx-auto shadow-2xl"
                           priority={index === 0}
-                          unoptimized={imgSrc.endsWith(".gif")} 
+                          unoptimized={imgSrc.endsWith(".gif")}
                         />
                       </div>
                     </div>
@@ -196,9 +179,8 @@ export default function ProjectDetail({
                   className="w-1.5 h-1.5 rounded-full transition-all duration-300"
                   style={{
                     background:
-                      index === activeIndex ? GOLD : "rgba(255,255,255,0.15)",
-                    transform:
-                      index === activeIndex ? "scale(1.2)" : "scale(1)",
+                      index === activeIndex ? "#B8965A" : "rgba(255,255,255,0.15)",
+                    transform: index === activeIndex ? "scale(1.2)" : "scale(1)",
                   }}
                 />
               ))}
@@ -208,17 +190,11 @@ export default function ProjectDetail({
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           <div className="lg:col-span-8">
-            <h3
-              className="text-2xl font-black mb-8 tracking-wide"
-              style={{ color: GOLD }}
-            >
+            <h3 className="text-2xl font-black mb-8 tracking-wide text-[#B8965A]">
               OVERVIEW
             </h3>
             <div className="space-y-6">
-              <p
-                className="text-lg md:text-xl text-white/70 leading-relaxed font-light border-l-2 pl-6"
-                style={{ borderColor: `${GOLD}30` }}
-              >
+              <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light border-l-2 pl-6 border-[#B8965A]/30">
                 {project.description}
               </p>
             </div>
@@ -236,8 +212,7 @@ export default function ProjectDetail({
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative w-full py-5 text-center font-mono text-[10px] uppercase tracking-[0.3em] rounded-xl overflow-hidden group/demo shadow-2xl transition-all duration-300"
-                      style={{ background: GOLD, color: NAVY }} 
+                      className="relative w-full py-5 text-center font-mono text-[10px] uppercase tracking-[0.3em] rounded-xl overflow-hidden group/demo shadow-2xl transition-all duration-300 bg-[#B8965A] text-[#1A2235]"
                     >
                       <span className="relative z-10 font-black">
                         Live Demo
@@ -249,13 +224,9 @@ export default function ProjectDetail({
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative w-full py-5 text-center font-mono text-[10px] uppercase tracking-[0.3em] rounded-xl overflow-hidden group/btn border transition-all duration-300"
-                    style={{ borderColor: `${GOLD}40`, color: GOLD }}
+                    className="relative w-full py-5 text-center font-mono text-[10px] uppercase tracking-[0.3em] rounded-xl overflow-hidden group/btn border transition-all duration-300 border-[#B8965A]/40 text-[#B8965A]"
                   >
-                    <span
-                      className="absolute inset-0 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 ease-out"
-                      style={{ background: GOLD }}
-                    />
+                    <span className="absolute inset-0 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 ease-out bg-[#B8965A]" />
                     <span className="relative z-10 group-hover/btn:text-[#1A2235] transition-colors duration-500 font-bold">
                       Source Code
                     </span>

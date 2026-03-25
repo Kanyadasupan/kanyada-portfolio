@@ -4,8 +4,6 @@ import { useRef } from "react";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "./ProjectCard";
 
-const GOLD = "#B8965A";
-const NAVY = "#1A2235";
 const categories = ["Next.js", "React Native", "Flutter"] as const;
 
 export const ProjectSection = () => {
@@ -16,7 +14,6 @@ export const ProjectSection = () => {
   const scroll = (index: number, direction: "left" | "right") => {
     const container = scrollRefs.current[index];
     if (container) {
-      // บนมือถือให้เลื่อนระยะสั้นลงเล็กน้อยตามขนาดการ์ดที่เล็กลง
       const isMobile = window.innerWidth < 768;
       const scrollAmount = direction === "left" 
         ? (isMobile ? -320 : -444) 
@@ -29,24 +26,19 @@ export const ProjectSection = () => {
     <section
       ref={ref}
       id="projects"
-      className="relative py-32 lg:py-40 overflow-hidden"
-      style={{ background: NAVY }}
+      className="relative py-32 lg:py-40 overflow-hidden bg-[#1A2235]"
     >
-      {/* ... (Blueprint Grid & Background Text เหมือนเดิม) ... */}
-
-      {/* Header */}
       <div className="max-w-7xl mx-auto px-8 mb-24 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="flex flex-col md:flex-row items-start md:items-end justify-between border-b pb-8"
-          style={{ borderColor: "rgba(255,255,255,0.05)" }}
+          className="flex flex-col md:flex-row items-start md:items-end justify-between border-b pb-8 border-white/5"
         >
           <div>
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-8 h-[2px]" style={{ background: GOLD }} />
-              <p className="font-mono text-[10px] tracking-[0.5em] uppercase font-bold" style={{ color: GOLD }}>
+              <div className="w-8 h-0.5 bg-[#B8965A]" />
+              <p className="font-mono text-[10px] tracking-[0.5em] uppercase font-bold text-[#B8965A]">
                 Selected Experience
               </p>
             </div>
@@ -55,7 +47,6 @@ export const ProjectSection = () => {
             </h2>
           </div>
           
-          {/* 📌 Visual Hint สำหรับมือถือ (แสดงเฉพาะจอมือถือ) */}
           <div className="md:hidden mt-4 flex items-center gap-2 text-[9px] font-mono uppercase tracking-[0.2em] text-white/30">
              <span>Swipe</span>
              <motion.span
@@ -82,8 +73,6 @@ export const ProjectSection = () => {
               </div>
 
               <div className="relative px-2 md:px-12">
-                
-                {/* 📌 ปุ่มลูกศรซ้าย - ปรับให้โชว์บนมือถือด้วย */}
                 <button
                   onClick={() => scroll(ci, "left")}
                   aria-label="Previous"
@@ -92,7 +81,6 @@ export const ProjectSection = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" className="md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
                 </button>
 
-                {/* รายการการ์ด */}
                 <div 
                   ref={(el) => { scrollRefs.current[ci] = el; }}
                   className="w-full overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth"
@@ -104,7 +92,6 @@ export const ProjectSection = () => {
                   </div>
                 </div>
 
-                {/* 📌 ปุ่มลูกศรขวา - ปรับให้โชว์บนมือถือด้วย */}
                 <button
                   onClick={() => scroll(ci, "right")}
                   aria-label="Next"
@@ -112,7 +99,6 @@ export const ProjectSection = () => {
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" className="md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                 </button>
-
               </div>
             </div>
           );
