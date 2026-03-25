@@ -66,6 +66,32 @@ export const projects: Project[] = [
     ] 
   },
   {
+    id: "online-calculators",
+    title: "Online Calculators",
+    description: "Online Calculators: A versatile web application offering essential daily calculation tools, including BMI, BMR, and Car Installment calculators to help manage your health and finances efficiently.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    githubUrl: "https://github.com/Kanyadasupan/next-dti-fourth-app",
+    demoUrl: "https://next-dti-fourth-app-xi.vercel.app/",
+    category: "Next.js",
+    images: [
+      "/images/calculators1.png",
+      "/images/calculators2.png",
+      "/images/calculators3.png",
+      "/images/calculators4.png",
+    ] 
+  },
+  {
+    id: "money-share-calculator",
+    title: "Money Share Calculator",
+    description: "Money Share Calculator: A simple and fast web application designed to help you easily split bills and calculate shared expenses among friends or family in seconds.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    githubUrl: "https://github.com/Kanyadasupan/rn-dti-third-app",
+    category: "Next.js",
+    images: [
+      "/images/moneyshare.png",
+    ] 
+  },
+  {
     id: "run-tracker-app",
     title: "Run Tracker App",
     description: "Running Tracker App: An application designed to record locations and track running distances.",
