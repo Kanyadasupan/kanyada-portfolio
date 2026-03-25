@@ -90,7 +90,7 @@ export default function ProjectDetail({
           </div>
         </div>
 
-        {/* Dynamic Height Image Slider */}
+        
         <div className="relative mb-16 md:mb-24 group/slider">
           <div
             className="relative w-full bg-[#0F1520] rounded-2xl md:rounded-[2rem] border overflow-hidden transition-[height] duration-500 ease-in-out"
@@ -135,12 +135,12 @@ export default function ProjectDetail({
                       key={index}
                       className="w-full flex-shrink-0 snap-center relative p-4 md:p-8"
                     >
-                      {/* 📌 เปลี่ยนจาก img เป็น Image */}
+                      
                       <div className="relative w-full">
                         <Image
                           src={imgSrc}
                           alt={`${project.title} screenshot ${index + 1}`}
-                          width={1920} // กำหนด Aspect Ratio ตั้งต้น
+                          width={1920} 
                           height={1080}
                           style={{
                             width: "100%",
@@ -149,7 +149,7 @@ export default function ProjectDetail({
                           }}
                           className="object-contain rounded-lg mx-auto shadow-2xl"
                           priority={index === 0}
-                          unoptimized={imgSrc.endsWith(".gif")} // ถ้ามีไฟล์ GIF ให้ใส่ตัวนี้
+                          unoptimized={imgSrc.endsWith(".gif")} 
                         />
                       </div>
                     </div>
@@ -237,12 +237,11 @@ export default function ProjectDetail({
                       target="_blank"
                       rel="noopener noreferrer"
                       className="relative w-full py-5 text-center font-mono text-[10px] uppercase tracking-[0.3em] rounded-xl overflow-hidden group/demo shadow-2xl transition-all duration-300"
-                      style={{ background: GOLD, color: NAVY }} // สีทองเด่นกว่าปุ่ม GitHub
+                      style={{ background: GOLD, color: NAVY }} 
                     >
                       <span className="relative z-10 font-black">
                         Live Demo
                       </span>
-                      {/* Effect เรืองแสงตอน Hover */}
                       <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/demo:translate-y-0 transition-transform duration-500" />
                     </Link>
                   )}

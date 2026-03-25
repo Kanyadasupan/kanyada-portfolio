@@ -1,6 +1,6 @@
 "use client";
 
-import { Navbar } from "@/components/Navbar"; // <-- Import Navbar ตรงนี้
+import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { QuickInfo } from "@/components/QuickInfo";
 import { Skills } from "@/components/Skills";
@@ -11,23 +11,23 @@ export default function PortfolioPage() {
   return (
     <main className="relative min-h-screen bg-white selection:bg-[#A98E56] selection:text-white overflow-x-hidden">
       
-      {/* เรียกใช้ Navbar ไว้บนสุดของหน้า */}
+      
       <Navbar />
 
-      {/* ส่วน Hero Section */}
+      
       <Hero />
 
-      {/* ใส่ id="info" สำหรับประวัติการศึกษา */}
+      
       <div id="info">
         <QuickInfo />
       </div>
 
-      {/* ใส่ id="skills" สำหรับหมวดหมู่ทักษะ */}
+      
       <div id="skills" className="bg-white scroll-mt-20">
         <Skills />
       </div>
 
-      {/* ใส่ id="projects" สำหรับผลงาน */}
+      
       <div id="projects" className="bg-[#242D3E] scroll-mt-20">
         <ProjectSection />
       </div>
